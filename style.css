@@ -1,0 +1,102 @@
+:root {
+    --hour:#ff7809;
+    --minute:rgb(237, 235, 203);
+    --second:#ffbe0b;
+    --circle:#ffbe0b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: #292a2e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 62.5%;
+  }
+  
+  .clock-frame {
+    height: 30rem;
+    width: 30rem;
+    border-radius: 50%;
+    border: 0.5rem solid #292a2e;
+    background-image: url("clock.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 15px 15px #202124, inset 0px 15px 15px #202124,
+      0px -15px 15px #2d2d31, inset 0px -15px 15px #2d2d31;
+    position: relative;
+  
+    .hour-hand {
+      height: 4.5rem;
+      width: 0.5rem;
+      background-color:var(--hour);
+      border-radius: 1rem;
+      position: absolute;
+      top: 10.5rem;
+      left: 14.75rem;
+      animation: turnhr 43200s infinite linear;
+    }
+  
+    .min-hand {
+      height: 7rem;
+      width: 0.5rem;
+      background-color:var(--minute);
+      border-radius: 1rem;
+      position: absolute;
+      top: 8rem;
+      left: 14.75rem;
+      animation: turn 3600s infinite linear;
+    }
+  
+    .second-hand {
+      height: 9rem;
+      width: 0.2rem;
+      background-color:var(--second);
+      border-radius: 0.5rem;
+      position: absolute;
+      top: 6rem;
+      left: 14.9rem;
+      animation: turn 60s infinite linear;
+    }
+  
+    .circle {
+      height: 1.8rem;
+      width: 1.8rem;
+      background-color:var(--second);
+      border-radius: 50%;
+      position: absolute;
+      top: 14.1rem;
+      left: 14.1rem;
+    }
+  }
+  
+  @keyframes turn {
+    0% {
+      transform: rotate(240deg);
+      transform-origin: bottom center;
+    }
+  
+    100% {
+      transform: rotate(360deg);
+      transform-origin: bottom center;
+    }
+  }
+  @keyframes turnhr {
+    0% {
+      transform: rotate(0deg);
+      transform-origin: bottom center;
+    }
+  
+    100% {
+      transform: rotate(360deg);
+      transform-origin: bottom center;
+    }
+  }
+  
